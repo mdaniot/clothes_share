@@ -15,6 +15,7 @@ puts 'Creating new clothes'
 30.times do
   item = Item.create!(
     user_id: 1,
+    title: "Lindas roupas de festa para você ahazar",
     item_type: ['Masculinas', 'Femininas', 'Sapatos Masculinos', 'Sapatos Femininos'].sample,
     price: rand(0..500),
     availability: [true, false].sample,
