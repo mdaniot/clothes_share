@@ -21,7 +21,8 @@ puts 'Creating new clothes'
     category: ['Vestidos', 'Paletós', 'Calças', 'Sapatos'].sample,
     size: rand(36..50),
     color: Faker::Color.color_name,
-    brand: ['Gucci', 'Armani', 'Prada', 'Louis Vitton', 'Tom Ford'].sample
+    brand: ['Gucci', 'Armani', 'Prada', 'Louis Vitton', 'Tom Ford'].sample,
+    description: Faker::Lorem.word
   )
   puts "New clothe - #{item.id} created."
 end
