@@ -5,10 +5,24 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.new(item_params)
+    @item.user = current_user
+    if @item.save
+      redirect_to items_path, notice: "Anúncio criado com sucesso!."
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   def show
   end
 
   private
+
 
   def set_item
     @item = Item.find(params[:id])

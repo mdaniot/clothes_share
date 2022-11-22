@@ -1,0 +1,28 @@
+<section class="position-relative py-4 py-xl-5">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-5 col-md-6 col-xxl-4">
+                <div class="card mb-5">
+                    <div class="card-body p-sm-5">
+                        <h3 class="mb-4">Qual produto você deseja anunciar?</h3>
+                            <%= simple_form_for(@item) do |f| %>
+                            <%= f.error_notification %>
+                            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                          <div class="form-inputs mb-3">
+                            <%= f.input :price, label:'Preço'%>
+                            <%= f.input :item_type,label:'Tipo'%>
+                            <%= f.input :category,label:'Categoria' %>
+                            <%= f.input :size, label:'Tamanho'%>
+                            <%= f.input :color, label:'Cor' %>
+                            <%= f.input :brand, label:'Marca'%>
+                          </div>
+                            <div class="form-actions mb-3">
+                            <%= f.button :submit, 'Novo Produto', class: 'btn btn-primary d-block w-100' %>
+                          </div>
+                            <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
