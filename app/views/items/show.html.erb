@@ -13,9 +13,9 @@
 						<h4 class="price"><span>R$ <%= @item.price %></span></h4>
 						<h5 class="sizes">Tamanho : <%= @item.size %></h5>
 						<h5 class="colors">Cor: <%= @item.color.capitalize %></h5>
-            <h5 class="brands">Marca: <%= @item.brand %></h5>
+            					<h5 class="brands">Marca: <%= @item.brand %></h5>
 						<div class="action">
-							<button class="add-to-cart btn btn-dark rounded-pill btn-lg mt-3" type="button"> Adicionar à sacolinha </button>
+						  <%= link_to 'Adicionar à sacolinha', new_item_deal_path(@item), class:"add-to-cart btn btn-dark rounded-pill btn-lg mt-3" %>
 						</div>
 					</div>
 				</div>
