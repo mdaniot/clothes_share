@@ -12,7 +12,7 @@ class DealsController < ApplicationController
     @deal.item = @item
 
     if @deal.save
-      redirect_to items_path, notice: "deal successfully created."
+      redirect_to @item, notice: "deal successfully created."
     else
       render :new, status: :unprocessable_entity
     end
