@@ -1,4 +1,4 @@
- <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+ <nav class="navbar navbar-dark bg-dark navbar-expand-lg" >
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Clothes share</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,8 +26,9 @@
         </li>
       </ul>
       <div class="d-flex gap-3">
-        <a class="nav-link text-light" href="/users/sign_in">Log in</a>
+        <a class="nav-link text-light" href="/users/sign_in">Entrar</a>
         <a class="nav-link text-light" href="/users/sign_up">Cadastre-se</a>
+        <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link text-light" %>
       </div>
     </div>
   </div>
