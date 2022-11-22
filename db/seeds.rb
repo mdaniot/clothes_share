@@ -12,7 +12,7 @@ Item.destroy_all
 puts 'database is clean!'
 
 puts 'Creating new clothes'
-30.times do
+20.times do
   item = Item.create!(
     user_id: 1,
     title: "Lindas roupas de festa para você ahazar",
@@ -23,7 +23,7 @@ puts 'Creating new clothes'
     size: rand(36..50),
     color: Faker::Color.color_name,
     brand: ['Gucci', 'Armani', 'Prada', 'Louis Vitton', 'Tom Ford'].sample,
-    description: Faker::Lorem.word
+    description: Faker::Lorem.paragraph
   )
   puts "New clothe - #{item.id} created."
 end
