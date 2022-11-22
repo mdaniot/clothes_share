@@ -3,8 +3,8 @@
   <div class="row">
   <% @items.each do |item|%>
     <div class="col-3 mt-2">
-      <div class="card text-right" style="width: 17rem;">
-        <img src="https://picsum.photos/200" class="card-img-top" alt="Linda roupitcha">
+      <div class="card-right" style="width: 17rem;">
+        <%= cl_image_tag item.photo.key, :width => 400, :crop => "pad" if item.photo.attached? %>
         <div class="card-body">
           <h5 class="card-title"><%= item.title %></h5>
           <p class="card-text">R$ <%= item.price %></p>
