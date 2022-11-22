@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to items_path, notice: "Anúncio criado com sucesso!."
+      redirect_to item_path(@item), notice: "Anúncio criado com sucesso!."
     else
       render :new, status: :unprocessable_entity
     end
