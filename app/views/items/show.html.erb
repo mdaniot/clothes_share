@@ -10,12 +10,12 @@
 					<div class="details col-md-6">
 						<h3 class="product-title"><%= @item.category %></h3>
 						<p class="product-description"><%= @item.description %></p>
-						<h4 class="price"><span>R$ <%= @item.price %></span></h4> 
+						<h4 class="price"><span>R$ <%= @item.price %></span></h4>
 						<h5 class="sizes">Tamanho : <%= @item.size %></h5>
 						<h5 class="colors">Cor: <%= @item.color.capitalize %></h5>
             <h5 class="brands">Marca: <%= @item.brand %></h5>
 						<div class="action">
-							<button class="add-to-cart btn btn-dark mt-3" type="button"> Adicionar à sacolinha </button>
+						  <%= link_to 'Adicionar à sacolinha', new_item_deal_path(@item), class:"add-to-cart btn btn-dark mt-3" %>
 						</div>
 					</div>
 				</div>
