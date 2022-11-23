@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   def show
   end
 
+
   def list
     @items = Item.where(item_type: params[:type].capitalize)
   end
