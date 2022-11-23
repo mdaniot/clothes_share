@@ -1,0 +1,14 @@
+#msg {
+  color: red;
+  font-style: italic;
+}
+
+.links {
+  color: #6c757d ;
+}
+.links, .a {
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+}

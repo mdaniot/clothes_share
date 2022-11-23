@@ -38,9 +38,10 @@
                                 </div>
 
                                 <div class="form-actions">
-                                <%= f.button :submit, "Atualizar" %>
+                                <%= f.button :submit, "Atualizar", class:'btn btn-dark d-block w-100' %>
                                 </div>
                                 <% end %>
+                                <br/>
 
 
                                 <p><%= link_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
