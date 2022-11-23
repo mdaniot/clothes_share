@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to items_path, notice: "Anúncio criado com sucesso!."
+      redirect_to item_path(@item), notice: "Anúncio criado com sucesso!."
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,12 +24,11 @@ class ItemsController < ApplicationController
 
   private
 
-
   def set_item
     @item = Item.find(params[:id])
   end
 
   def item_params
-    params.require(:item).permit(:price, :availability, :product_type, :category, :size, :color, :brand, :description)
+    params.require(:item).permit(:price, :availability, :product_type, :category, :size, :color, :brand, :description, :photo)
   end
 end
