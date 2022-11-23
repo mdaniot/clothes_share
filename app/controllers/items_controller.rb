@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def list
+    @items = Item.where(item_type: params[:type].capitalize)
+  end
+
   private
 
   def set_item
@@ -29,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:price, :availability, :product_type, :category, :size, :color, :brand, :description, :photo)
+    params.require(:item).permit(:title, :price, :availability, :item_type, :category, :size, :color, :brand,
+                                 :description, :photo)
   end
 end
