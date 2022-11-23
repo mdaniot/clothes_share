@@ -30,7 +30,7 @@
         <a class="nav-link text-light" href="/users/sign_in">Entrar</a>
         <a class="nav-link text-light" href="/users/sign_up">Cadastre-se</a>
         <p class=" m-1 text-light">Bem Vindo(a) <%= current_user.first_name.to_s.humanize if current_user %>!</p>
-            <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" if current_user && current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" if current_user && current_user.photo.attached? %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item text-center" href="/users/edit">Editar Perfil</a>
               <a><%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Tem certeza que quer sair?"}, class: "nav-link text-dark text-center" %></a>
