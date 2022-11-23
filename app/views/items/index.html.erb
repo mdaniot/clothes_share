@@ -4,9 +4,9 @@
   <% @items.each do |item|%>
     <div class="col-3 mt-2">
       <div class="card-right" style="width: 17rem;">
-        <%= cl_image_tag item.photo.key, :width => 400, :crop => "pad" if item.photo.attached? %>
+        <%= cl_image_tag item.photo.key, :width => 200, :height => 300, :crop => "fill" if item.photo.attached? %>
         <div class="card-body">
-          <h5 class="card-title"><%= item.title %></h5>
+          <h5 class="card-title"><%= item.category %></h5>
           <p class="card-text">R$ <%= item.price %></p>
           <a href="/items/<%=item.id%>" class="btn btn-dark rounded-pill">Me alugue</a>
         </div>
