@@ -9,6 +9,7 @@
                             <%= f.error_notification %>
                             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                           <div class="form-inputs mb-3">
+                            <%= f.input :photo, label:'Foto', as: :file %>
                             <%= f.input :title, label:'Título'%>
                             <%= f.input :description, label:'Descrição'%>
                             <%= f.input :item_type, :collection => Item::TYPES, label:'Tipo do item' %>
@@ -17,11 +18,10 @@
                             <%= f.input :size, label:'Tamanho'%>
                             <%= f.input :color, label:'Cor' %>
                             <%= f.input :brand, label:'Marca'%>
-                            <%= f.input :photo, as: :file %>
                           </div>
-                            <div class="form-actions mb-3">
-                            <%= f.button :submit, 'Novo Produto', class: 'btn btn-primary d-block w-100' %>
-                            </div>
+                            <div class="form-actions mb-2 pt-4">
+                            <%= f.button :submit, 'Novo Produto', class: 'btn btn-dark rounded-pill d-block w-100' %>
+                          </div>
                             <% end %>
                     </div>
                 </div>
