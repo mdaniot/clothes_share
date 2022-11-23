@@ -22,6 +22,8 @@ class ItemsController < ApplicationController
   def show
   end
 
+  
+
   private
 
   def set_item

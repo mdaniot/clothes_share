@@ -15,7 +15,7 @@
 						<h5 class="colors">Cor: <%= @item.color.capitalize %></h5>
             					<h5 class="brands">Marca: <%= @item.brand %></h5>
 						<div class="action">
-						  <%= link_to 'Adicionar à sacolinha', new_item_deal_path(@item), class:"add-to-cart btn btn-dark rounded-pill btn-lg mt-3" %>
+						  <%= @item.availability ? (link_to 'Adicionar à sacolinha', new_item_deal_path(@item), class:"add-to-cart btn btn-dark rounded-pill btn-lg mt-3") : (render 'mensagem_alugado') %>
 						</div>
 					</div>
 				</div>

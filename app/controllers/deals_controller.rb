@@ -10,8 +10,9 @@ class DealsController < ApplicationController
     @deal = Deal.new(deal_params)
     @deal.user = current_user
     @deal.item = @item
-
     if @deal.save
+      @item.availability = false
+      @item.save
       redirect_to @item, notice: "deal successfully created."
     else
       render :new, status: :unprocessable_entity
