@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.all
@@ -22,9 +22,14 @@ class ItemsController < ApplicationController
   def show
   end
 
-
   def list
     @items = Item.where(item_type: params[:type].capitalize)
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private

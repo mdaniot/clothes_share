@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @user = current_user
+    @items = Item.all.sample(8)
   end
 end

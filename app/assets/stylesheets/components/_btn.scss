@@ -1,6 +1,7 @@
 .btn-ghost {
-  color: #ffffff;
-  border: 1px solid #4A4A4A;
+  color: #888585;
+  border: 1px solid #888585;
+  background: #ffffff;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -10,8 +11,27 @@
 
 .btn-ghost:hover {
   opacity: 1;
+  color: #BAD1C2;
+  background: #ffffff;
 }
 
 .btn-light {
   border-radius: 50px;
+}
+
+.btn-bk {
+  color: #ffffff;
+  border: 1px solid #000000;
+  background: #000000;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-bk:hover {
+  opacity: 1;
+  color: #BAD1C2;
+  background: #000000;
 }
