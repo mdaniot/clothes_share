@@ -23,12 +23,16 @@
             <li><a class="dropdown-item" href="/items">Sapatos Masculinos</a></li>
             <li><a class="dropdown-item" href="/items">Sapatos Femininos</a></li>
           </ul>
-        </li>
-      </ul>
-      <div class="d-flex gap-3">
+        </ul>
+      <div class="d-flex m-1 gap-3 d-flex align-items-center">
         <a class="nav-link text-light" href="/users/sign_in">Entrar</a>
         <a class="nav-link text-light" href="/users/sign_up">Cadastre-se</a>
-        <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Tem certeza que quer sair?"}, class: "nav-link text-light" %>
+        <p class=" m-1 text-light">Bem Vindo(a) <%= @user.first_name.to_s.humanize if @user %>!</p>
+            <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" if @user && current_user.photo.attached? %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-center" href="/users/edit">Eitar Perfil</a>
+              <a><%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Tem certeza que quer sair?"}, class: "nav-link text-dark text-center" %></a>
+            </div>
       </div>
     </div>
   </div>
