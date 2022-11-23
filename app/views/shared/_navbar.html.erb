@@ -1,6 +1,6 @@
  <nav class="navbar navbar-dark bg-dark navbar-expand-lg" >
   <div class="container-fluid">
-    <a class="navbar-brand">Clothes share</a>
+    <a class="navbar-brand">CLOTHES SHARE.</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,9 +27,9 @@
       </ul>
 
       <div class="d-flex m-1 gap-3 d-flex align-items-center">
-        <a class="nav-link text-light" href="/users/sign_in">Entrar</a>
-        <a class="nav-link text-light" href="/users/sign_up">Cadastre-se</a>
-        <p class=" m-1 text-light">Bem Vindo(a) <%= @user.first_name.to_s.humanize if @user %>!</p>
+        <a class="nav-link text-light" href="/users/sign_in"><%= "Entrar" if current_user == nil %></a>
+        <a class="nav-link text-light" href="/users/sign_up"><%= "Cadastre-se" if current_user == nil %></a>
+        <p class=" m-1 text-light">Bem Vindo(a) <%= current_user.first_name.to_s.humanize if current_user %>!</p>
             <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" if current_user && current_user.photo.attached? %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item text-center" href="/users/edit">Editar Perfil</a>
