@@ -1,13 +1,27 @@
+<section class="position-relative py-4 py-xl-5">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-5 col-md-6 col-xxl-4">
+                <div class="card mb-5">
+                    <div class="card-body p-sm-5">
+                        <h3 class="mb-4">Vamos alugar?</h3>
+
 <%= simple_form_for [@item, @deal], data: { controller: 'flatpickr' } do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
+    <div class="form-inputs mb-3">
       <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } }%>
       <%= f.input :finish_date, as: :string, input_html: { data: { flatpickr_target: "finishDate" } } %>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions mb-2 pt-4">
       <%= f.button :submit, class: 'btn btn-primary' %>
     </div>
 <% end %>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
