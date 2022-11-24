@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    available? ? @item.availability = true : @item.availability = false
   end
 
   def list
@@ -33,6 +34,16 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def available?
+    date = DateTime.now
+    availability = true
+    @item.deals.each do |deal|
+      diff = (date - deal.start_date).positive? && (deal.finish_date - date).positive?
+      availability = false if diff
+    end
+    availability
+  end
 
   def set_item
     @item = Item.find(params[:id])
