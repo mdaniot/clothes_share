@@ -17,25 +17,24 @@
             Roupas
           </a>
           <ul class="dropdown-menu">
-          <% Item::TYPES.each do |type| %>
-            <li><a class="dropdown-item" href="/items/list/<%= type %>"><%= type %></a></li>
-          <% end %>
+            <% Item::TYPES.each do |type| %>
+              <li><a class="dropdown-item" href="/items/list/<%= type %>"><%= type %></a></li>
+            <% end %>
           </ul>
           <li class="nav-item">
             <a class="nav-link" href="/items/new">Anunciar</a>
           </li>
-      </ul>
-
-      <div class="d-flex m-1 gap-3 d-flex align-items-center">
-        <a class="nav-link text-light" href="/users/sign_in"><%= "Entrar" if current_user == nil %></a>
-        <a class="nav-link text-light" href="/users/sign_up"><%= "Cadastre-se" if current_user == nil %></a>
-        <p class=" m-1 text-light">Bem Vindo(a) <%= current_user.first_name.to_s.humanize if current_user %>!</p>
-            <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" if current_user && current_user.photo.attached? %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-center" href="/users/edit">Editar Perfil</a>
-              <a><%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Tem certeza que quer sair?"}, class: "nav-link text-dark text-center" %></a>
-            </div>
+        </ul>
+        <div class="d-flex m-1 gap-3 d-flex align-items-center">
+          <a class="nav-link text-light" href="/users/sign_in"><%= "Entrar" if current_user == nil %></a>
+          <a class="nav-link text-light" href="/users/sign_up"><%= "Cadastre-se" if current_user == nil %></a>
+          <p class=" m-1 text-light">Bem Vindo(a) <%= current_user.first_name.to_s.humanize if current_user %>!</p>
+          <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" if current_user && current_user.photo.attached? %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-center" href="/users/edit">Editar Perfil</a>
+            <a><%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Tem certeza que quer sair?"}, class: "nav-link text-dark text-center" %></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
