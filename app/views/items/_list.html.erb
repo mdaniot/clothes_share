@@ -1,5 +1,5 @@
 <div class="container mt-4 text-center">
-  <h1>De uma olhada nessas roupitchas para alugar</h1>
+  <h3>Escolha uma de nossas roupas para alugar 🤩</h3>
   <div class="row">
   <% @items.each do |item|%>
     <div class="col-3 mt-2">
@@ -8,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= item.title %></h5>
           <p class="card-text">R$ <%= item.price %></p>
-          <a href="/items/<%=item.id%>" class="btn btn-dark rounded-pill">Me alugue</a>
+          <a href="/items/<%=item.id%>" class="btn btn-dark rounded-pill">Me alugue!</a>
         </div>
       </div>
     </div>
