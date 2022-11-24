@@ -1,19 +1,21 @@
-<div class="container mt-4 text-center">
+<div class="text-center">
   <h1>Dê uma olhada nessas roupitchas para alugar</h1>
 </div>
-<div class="container-sm">
-<div class=" d-flex align-items-center p-3" >
-  <div class="cards container gap-4">
-    <% @items.each do |item|%>
-      <div class="card-product">
-        <%= cl_image_tag item.photo.key, :width => 200, :height => 300, :crop => "fit" if item.photo.attached? %>
-        <div class="card-product-infos">
-          <h5 class="card-title"><%= item.title %></h5>
-          <p class="card-text">R$ <%= item.price %></p>
-          <a href="/items/<%=item.id%>" class="btn btn-dark rounded-pill">Me alugue</a>
+  <div class="container-lg">
+    <div class=" p-3" >
+      <div class="cards text-center">
+          <% @items.each do |item|%>
+          <div class="card-trip">
+            <%= cl_image_tag item.photo.key if item.photo.attached? %>
+            <div class="card-trip-infos">
+              <h5 class="card-title"><%= item.title %></h5>
+              <h3 class="card-text">R$ <%= item.price%>
+              </h3>
+            </div>
+              <a href="/items/<%=item.id%>" class="btn btn-dark rounded-pill">Me alugue</a>
+          </div>
+              <% end %>
         </div>
       </div>
-          <% end %>
     </div>
   </div>
-</div>
