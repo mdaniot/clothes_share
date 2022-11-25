@@ -1,19 +1,17 @@
 <div class="container mt-4 text-center">
-  <h3>Escolha uma de nossas roupas para alugar 🤩</h3>
-  <br/>
-  <br/>
+  <h3>Produtos recomendados para você ;)</h3>
+  <br>
+  <br>
 </div>
-  <div class="container">
-   <div class="cards">
+   <div class="cards container gap-4">
       <% @items.each do |item|%>
       <div class="card-product">
         <%= cl_image_tag item.photo.key, :width => 200, :height => 300, :crop => "fit" if item.photo.attached? %>
         <div class="card-product-infos">
-          <h5><%= item.title %></h5>
-          <h4>R$ <%= item.price %></h4>
-          <a href="/items/<%=item.id%>" class="list-btn btn btn-dark rounded-pill">Me alugue!</a>
+          <h4><%= item.title %></h4>
+          <h6>R$ <%= item.price %></h6>
+          <a href="/items/<%=item.id%>" class="card-button ">Me alugue!</a>
         </div>
       </div>
           <%end%>
-  </div>
     </div>
