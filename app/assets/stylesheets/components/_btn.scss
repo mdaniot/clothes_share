@@ -36,3 +36,19 @@
   background: #000000;
 }
 
+.card-button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #040404;
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+}
+
+.card-button:hover {
+  opacity: 1;
+  color: #ffffff;
+  background: #BAD1C2;
+}
