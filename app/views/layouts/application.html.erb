@@ -6,12 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
+    <%= render "shared/flashes" %>
     <%= yield %>
     <%= render "shared/chat" %>
-    <%= render "shared/flashes" %>
+
   </body>
 </html>
