@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   resources :items do
-    resources :deals
+    resources :deals, only: [:new, :create]
     collection do
       get '/list/:type', to: "items#list"
     end
