@@ -6,7 +6,7 @@
    <div class="cards container gap-4">
       <% @items.each do |item|%>
       <div class="card-product">
-        <%= cl_image_tag item.photo.key, :width => 200, :height => 300, :crop => "fit" if item.photo.attached? %>
+        <%= cl_image_tag item.photo.key, :width => 1920, :height => 1080, crop: :limit if item.photo.attached? %>
         <div class="card-product-infos">
           <h4><%= item.title %></h4>
           <h6>R$ <%= item.price %></h6>
