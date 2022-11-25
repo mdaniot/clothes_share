@@ -22,15 +22,16 @@
             <a class="nav-link" href="/items/new">Anunciar</a>
           </li>
         </ul>
-        <div class="d-flex m-1 gap-3 d-flex align-items-center">
+        <div class="d-flex m-1 gap-2 d-flex align-items-center">
           <a class="nav-link text-light" href="/users/sign_in"><%= "Entrar" if current_user == nil %></a>
           <a class="nav-link text-light" href="/users/sign_up"><%= "Cadastre-se" if current_user == nil %></a>
           <p class=" m-1 text-light"><%= "Bem Vindo(a) " if current_user %> <%= current_user.first_name.to_s.humanize if current_user %></p>
-          <%if current_user.photo.attached? %>
+          <%if current_user && current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" %>
-          <%else%>
-          <%=image_tag "3871074.png", :width=>25, :height=>25, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"%>
+          <%elsif current_user && !current_user.photo.attached?%>
+          <%=image_tag "1.png", :width=>25, :height=>25, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"%>
           <%end%>
+
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-right" href="/users/edit">Editar Perfil</a>
             <a><%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Tem certeza que quer sair?"}, class: "dropdown-item  text-right" %></a>
