@@ -26,9 +26,9 @@
           <a class="nav-link text-light" href="/users/sign_in"><%= "Entrar" if current_user == nil %></a>
           <a class="nav-link text-light" href="/users/sign_up"><%= "Cadastre-se" if current_user == nil %></a>
           <p class=" m-1 text-light"><%= "Bem Vindo(a) " if current_user %> <%= current_user.first_name.to_s.humanize if current_user %></p>
-          <%if current_user.photo.attached? %>
+          <% if current_user && current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, :width=>50, :height=>50, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false" %>
-          <%else%>
+          <% elsif current_user %>
           <%=image_tag "3871074.png", :width=>25, :height=>25, :gravity=>"face", :crop=>"fill", class:"avatar dropdown-toggle", id:"navbarDropdown", "type" => "button", "data-bs-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"%>
           <%end%>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
