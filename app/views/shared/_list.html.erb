@@ -3,7 +3,8 @@
   <br/>
   <br/>
 </div>
-   <div class="cards container gap-4">
+  <div class="container">
+   <div class="cards">
       <% @items.each do |item|%>
       <div class="card-product">
         <%= cl_image_tag item.photo.key, :width => 200, :height => 300, :crop => "fit" if item.photo.attached? %>
@@ -14,4 +15,5 @@
         </div>
       </div>
           <%end%>
+  </div>
     </div>
