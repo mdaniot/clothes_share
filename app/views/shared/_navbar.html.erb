@@ -1,7 +1,10 @@
  <nav class="navbar navbar-dark bg-dark navbar-expand-lg" >
   <div class="container-fluid">
     <a class="navbar-brand" href="/">CLOTHES SHARE.</a>
-    <div class="collapse navbar-collapse" id="navbarScroll">
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/">Novidades</a>
@@ -22,7 +25,7 @@
             <a class="nav-link" href="/items/new">Anunciar</a>
           </li>
         </ul>
-        <div class="d-flex m-1 gap-2 d-flex align-items-center">
+        <div class="m-1 gap-2 d-flex align-items-center">
           <a class="nav-link text-light" href="/users/sign_in"><%= "Entrar" if current_user == nil %></a>
           <a class="nav-link text-light" href="/users/sign_up"><%= "Cadastre-se" if current_user == nil %></a>
           <p class=" m-1 text-light"><%= "Bem Vindo(a) " if current_user %> <%= current_user.first_name.to_s.humanize if current_user %></p>
