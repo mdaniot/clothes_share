@@ -11,12 +11,12 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs mb-3">
-      <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } }%>
-      <%= f.input :finish_date, as: :string, input_html: { data: { flatpickr_target: "finishDate" } } %>
+      <%= f.input :start_date, label: 'De:',as: :string, input_html: { data: { flatpickr_target: "startDate" } }%>
+      <%= f.input :finish_date, label: 'Até:', as: :string, input_html: { data: { flatpickr_target: "finishDate" } } %>
     </div>
 
     <div class="form-actions mb-2 pt-4">
-      <%= f.button :submit, 'Finalizar aluguel', class: 'btn btn-dark rounded-pill d-block' %>
+      <%= f.button :submit, 'Finalizar aluguel', class: 'btn card-button-form' %>
 
     </div>
 <% end %>

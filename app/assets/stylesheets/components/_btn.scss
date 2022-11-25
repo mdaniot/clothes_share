@@ -52,3 +52,39 @@
   color: #ffffff;
   background: #BAD1C2;
 }
+
+.card-button-show {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  width: 250px;
+  margin-top: 20px;
+  background-color: #040404;
+  color: #fff;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.card-button-show:hover {
+  opacity: 1;
+  color: #ffffff;
+  background: #BAD1C2;
+}
+
+.card-button-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #040404;
+  color: #fff;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.card-button-form:hover {
+  opacity: 1;
+  color: #ffffff;
+  background: #BAD1C2;
+}
