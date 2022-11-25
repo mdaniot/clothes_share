@@ -1,0 +1,49 @@
+@media (max-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card-product {
+  overflow: hidden;
+  height: 450px;
+  width: 350px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 73%;
+  width: 100%;
+  object-fit: scale-down;
+}
+
+.card-product h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.card-product h6 {
+  font-size: 16px;
+  font-weight:lighter;
+  margin: 5px;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px 0px 0px 0px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
