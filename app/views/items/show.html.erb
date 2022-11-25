@@ -4,7 +4,7 @@
 				<div class="wrapper row">
 					<div class="preview col-md-6">
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><%= cl_image_tag @item.photo.key, :width => 400, :crop => "pad" if @item.photo.attached? %></div>
+						  <div class="tab-pane active" id="pic-1"><%= cl_image_tag @item.photo.key, style:"width: 100%" if @item.photo.attached? %></div>
 						</div>
 					</div>
 					<div class="details col-md-6">
